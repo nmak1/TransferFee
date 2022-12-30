@@ -50,7 +50,7 @@ class TransferFee {
         fun start() {
             println("Введите  сумму перевода в руб.")
             val input = readln().toInt()
-            val com = calc(TypeCart.VK_Pay,100000,10000)
+            val com = calc(TypeCart.VK_Pay,10000,input)
 
             println("Комиссия = $com руб.")
         }
