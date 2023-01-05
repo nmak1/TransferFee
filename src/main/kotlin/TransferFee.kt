@@ -1,7 +1,9 @@
 package ru.netoligy
 
+import org.jetbrains.annotations.TestOnly
 
-class TransferFee {
+
+open class TransferFee {
 
     companion object {
 
@@ -23,7 +25,7 @@ class TransferFee {
             return amount / RUB_PER_KOP
         }
 
-        private fun calc(
+         fun calc(
             type: Enum<TypeCart>, amountOfPreviousPurchases: Int,
             amountTransfer: Int,
         ): Long {
@@ -63,4 +65,5 @@ class TransferFee {
 
 
     }
+
 }
