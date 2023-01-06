@@ -1,5 +1,8 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm' version '1.7.21'
+    id('jacoco')
+    id("java")
+
 }
 
 group 'ru.neotogy'
@@ -11,4 +14,11 @@ repositories {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib"
+    testImplementation("junit:junit:4.13.2")
+}
+tasks.test {
+    finalizedBy(tasks.jacocoTestReport) // report is always generated after tests run
+}
+tasks.jacocoTestReport {
+    dependsOn(tasks.test) // tests are required to run before generating the report
 }
