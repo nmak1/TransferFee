@@ -17,7 +17,7 @@ class TransferFeeTest : TransferFee(){
         val com = calc(TypeCart.MasterCard,100000,100000)
         assertEquals(com,6020)
         val com1 = calc(TypeCart.MasterCard,10000,10000)
-        assertEquals(com1,0)
+        assertEquals(com1,1000)
     }
     @Test
     fun testCalc_With_Visa_pay() {
